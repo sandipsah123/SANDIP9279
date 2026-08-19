@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="fullborder">
+    <div class="conductor">
+        <h2>Registation Form</h2>
+        <form class="conductor" action="" method="POST" name="Student-Registation Form">
+        <div class="conductor">
+            <input type="text" name="FirstName" placeholder="First Name" class="sandip">
+            <span>
+                <input type="text" name="LastName" placeholder="Last Name" class="sandip">
+            </span>
+        </div>
+        <div class="conductor">
+            <input type="text" name="FathersName" placeholder="Father's Name" class="fathers">
+            
+        </div>
+        <div class="conductor">
+            <input type="text" name="MotherName" placeholder="Mother Name" class="mother">
+        </div>
+        <div class="conductor">
+            <input type="text" name="email" placeholder="Email" class="mother">
+        </div>
+        <div class="conductor">
+            <input type="text" name="ContactNumber" placeholder="Contact Number" class="mother">
+        </div>
+        <div class="radio" >
+            
+            <input type="radio"  value="Male" name="Gender">Male
+            <input type="radio"  value="Female" name="Gender">Female
+            <input type="radio"  value="Other" name="Gender">Other
+
+        </div>
+        <div class="selected">
+            <select name="Category" class="hello">
+                <option value="Select Category ">Select Category</option>
+                <option value="OBC">OBC</option>
+                <option value="EBC">EBC</option>
+                <option value="SC">SC</option>
+                <option value="ST">ST</option>
+                <option value="GENERAL">GENERAL</option>
+                <option value="Other">Other</option>
+               
+            </select>
+        </div>
+        <div class="selected">
+            <select name="District" class="hello">
+                <option value="Select District">Select District</option>
+                <option value="Asam">Asam</option>
+                <option value="Begusarai">Begusarai</option>
+                <option value="Katihar">Katihar</option>
+                <option value="Darbhanga">Darbhanga</option>
+                <option value="Supaul">Supaul</option>
+                <option value="Baka">Baka</option>
+                <option value="Nalanda">Nalanda</option>
+                <option value="Madhubani">Madhubani</option>
+            </select>
+        </div>
+        <div class="selected">
+            <select name="state" class="hello">
+                <option value="Select State">Select State</option>
+                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                <option value="Bihar">Bihar Sarif</option>
+                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Bihar">Bihar</option>
+            </select>
+        </div>
+        <div class="submit">
+            <input type="submit" name="submit" placeholder="submit" class="button">
+            <input type="reset" name="reset" placeholder="reset" class="button">
+        </div>
+
+    </form>
+    </div>
+    <script>
+const scriptURL = 'https://script.google.com/macros/s/AKfycbw9WOIfp3oOx3k0b5Ih4NfUBj-Ga2NVWQrC_2dJtJzgk4WnhmP_uhIXtztuVI10h82hzg/exec'
+
+const form = document.forms['Student-Registation Form']
+
+form.addEventListener('submit', e => {
+  
+  e.preventDefault()
+  
+  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+  .then(response => alert("Your form has been successfully submitted. We truly appreciate your interest and will be in touch with you shortly." ))
+  .then(() => { window.location.reload(); })
+  .catch(error => console.error('Error!', error.message))
+})
+    </script>
+  
+    
+</body>
+</html>
